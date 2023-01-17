@@ -1,0 +1,49 @@
+<header>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <div class="container-fluid d-flex justify-content-between">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/"><img src="/MB.jpg" alt="" width="50" height="50"><img src="/MYBLOG.jpg" alt="" width="150" height="50" class="mx-2"></a>
+          </li>
+        </ul>
+        <span class="mx-3" id="user-letter" title="<%= username %>"><%= username[0] %></span>
+      </div>
+    </nav>
+    <div class="container-fluid" id="blog-main">
+      <div class="row" id="content-row">
+        <div class="col-2 link-column">
+          <div class="row m-3">
+            <form id="newPostForm" action="/blog/newpost" method="GET" >
+              <button class="pill-button new-post-btn" type="submit">+ NEW POST</button>
+            </form>
+          </div>
+          <div class="row m-3">
+            <form id="allPostForm" action="/blog/home" method="GET" >
+              <button class="pill-button all-post-btn" type="submit"><i class="bi-file-earmark-text"></i> POSTS</button>
+            </form>
+          </div>
+          <div class="row m-3">
+            <form id="blogForm" action="/blog/<%= username %>" method="GET" >
+              <button class="pill-button view-blog-btn" type="submit"><i class="bi-box-arrow-in-up-right"></i> VIEW BLOG</button>
+            </form>
+          </div>
+        </div>
+      
+        <div class="col-10 d-flex flex-column align-items-center">
+            <% postArray.forEach((element) => { %>
+                <div class="card my-3" style="width: 80%;">
+                  <div class="row g-0">
+                    <div class="card-body">
+                        <h1 class="card-title text-center"><%= element.title %></h5>
+                        <p class="card-text text-center"><small class="text-muted">Last updated <%= element.updatedAt %></small></p>
+                        <div class="card-body">
+                            <p class="card-text mx-5"><%= element.body %></p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            <% }) %>
+        </div>
+      </div>
+    </div>
+  </header>

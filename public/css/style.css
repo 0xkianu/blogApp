@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.navbar {
+    border-bottom-style: solid;
+    border-bottom-color: rgb(230, 228, 228);
+    border-bottom-width: 1px;
+}
+
+.link-column {
+    border-right-style: solid;
+    border-right-color: rgb(230, 228, 228);
+    border-right-width: 1px;
+}
+
+#blog-main {
+    height: 90vh;
+}
+
+#content-row {
+    height: 100%;
+}
+
+.pill-button {
+width: 140px;
+height: 45px;
+font-family: 'Roboto', sans-serif;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 2.5px;
+font-weight: 500;
+color: #fff;
+background-color: #57b243;
+border: none;
+border-radius: 45px;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease 0s;
+cursor: pointer;
+outline: none;
+}
+
+.pill-button:hover {
+background-color: #b5ffa4;
+box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+color: #fff;
+transform: translateY(-7px);
+}
+
+.publish-button {
+width: 140px;
+height: 45px;
+font-family: 'Roboto', sans-serif;
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 2.5px;
+font-weight: 500;
+color: #fff;
+background-color: gray;
+border: none;
+border-radius: 45px;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+transition: all 0.3s ease 0s;
+cursor: pointer;
+outline: none;
+}
+
+.publish-button:hover {
+    background-color: #b5ffa4;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.bi-file-earmark-text {
+    font-size: 15px; 
+    color: white;
+    pointer-events: none
+}
+
+.bi-box-arrow-in-up-right {
+    font-size: 15px; 
+    color: white;
+    pointer-events: none
+}
+
+.bi-trash-fill {
+    color: #57b243;
+    font-size: 30px;
+    pointer-events: none
+}
+
+.bi-pencil {
+    color: #57b243;
+    font-size: 30px;
+    pointer-events: none
+}
+
+.bi-eye {
+    color: #57b243;
+    font-size: 30px;
+    pointer-events: none
+}
+
+.blog-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+  
+  /* visited link */
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #57b243 !important;
+}
+
+#post-letter {
+    font-family: 'Lobster', cursive;;
+    font-size: 60px;
+}
+
+#user-letter {
+    font-family: 'Lobster', cursive;;
+    font-size: 40px; 
+}
+
+.login-element {
+    font-family: 'Roboto', sans-serif;
+}

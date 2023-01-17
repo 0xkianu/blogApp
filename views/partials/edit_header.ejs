@@ -1,0 +1,67 @@
+<header>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <div class="container-fluid d-flex justify-content-between">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/"><img src="/MB.jpg" alt="" width="50" height="50"><img src="/MYBLOG.jpg" alt="" width="150" height="50" class="mx-2"></a>
+          </li>
+        </ul>
+        <span class="mx-3" id="user-letter" title="<%= username %>"><%= username[0] %></span>
+      </div>
+    </nav>
+    <div class="container-fluid" id="blog-main">
+      <div class="row" id="content-row">
+        <div class="col-10 link-column">
+            <div class="row">
+                <div class="form-floating my-3">
+                    <textarea class="form-control" placeholder="post title" id="postTitle" name="postTitle"><%= post[0].title %></textarea>
+                    <label for="postTitle">TITLE</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-floating my-3">
+                    <textarea class="form-control" style="height: 500px;" placeholder="post content" id="postContent" name="postContent"><%= post[0].body %></textarea>
+                    <label for="postContent"></label>
+                </div>
+            </div>
+            <div class="row">
+                <select class="form-select mx-3" id="category-select" style="width: 30%;" aria-label="Default select example">
+                  <option selected>Category</option>
+                  <option value="1">Food</option> 
+                  <option value="2">Travel</option>
+                  <option value="3">Health and fitness</option>
+                  <option value="4">Lifestyle</option>
+                  <option value="5">Fashion and beauty</option> 
+                  <option value="6">Photography</option> 
+                  <option value="7">Personal</option> 
+                  <option value="8">DIY craft</option> 
+                  <option value="9">Parenting</option> 
+                  <option value="10">Music</option> 
+                  <option value="11">Business</option> 
+                  <option value="12">Art and design</option> 
+                  <option value="13">Book and writing</option> 
+                  <option value="14">Personal finance</option> 
+                  <option value="15">Interior design</option> 
+                  <option value="16">Sports</option> 
+                  <option value="17">News</option> 
+                  <option value="18">Movie</option> 
+                  <option value="19">Religion</option>
+                  <option value="20">Political</option>
+                  </select>
+              </div>
+        </div>
+        <div class="col-2">
+            <div class="row m-3">
+                <% if (post[0].isPublished) { %>
+                    <button class="pill-button post-button-publish" id="p_<%= post[0].id %>"><i class="bi-pen"></i> PUBLISH</button>
+                <% } else { %>
+                    <button class="publish-button post-button-publish" id="p_<%= post[0].id %>"><i class="bi-pen"></i> PUBLISH</button>
+                <% } %>
+            </div>
+            <div class="row m-3">
+                <button class="pill-button post-button-save" id="c_<%= post[0].id %>"><i class="bi-save"></i> SAVE</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>

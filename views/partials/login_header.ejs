@@ -1,0 +1,36 @@
+<header>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="/"><img src="/MB.jpg" alt="" width="50" height="50"><img src="/MYBLOG.jpg" alt="" width="150" height="50" class="mx-2"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <form id="login-form" action="/login" method="POST">
+                    <fieldset class="d-flex flex-column justify-content-center align-items-center">
+                        <legend class="login-element text-center">LOGIN</legend>
+                        <div>
+                          <label class="login-element" for="username">Username</label>
+                          <input type="text" name="username" id="username" />
+                        </div>
+                        <div class="my-3">
+                            <label class="login-element" for="passphrase">Password&nbsp;</label>
+                            <input type="password" name="passphrase" id="passphrase" />
+                        </div>
+                        <button class="pill-button" type="submit">Sign in</button>
+                    </fieldset>
+                </form>
+                <form id="newAccount" action="/create_account" method="GET">
+                    <button class="pill-button my-2">Create</button>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>

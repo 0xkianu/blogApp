@@ -1,0 +1,87 @@
+<header>
+  <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <div class="container-fluid d-flex justify-content-between">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="/"><img src="/MB.jpg" alt="" width="50" height="50"><img src="/MYBLOG.jpg" alt="" width="150" height="50" class="mx-2"></a>
+        </li>
+      </ul>
+      <span class="mx-3" id="user-letter" title="<%= username %>"><%= username[0] %></span>
+    </div>
+  </nav>
+  <div class="container-fluid" id="blog-main">
+    <div class="row" id="content-row">
+      <div class="col-2 link-column">
+        <div class="row m-3">
+          <form id="newPostForm" action="/blog/newpost" method="GET" >
+            <button class="pill-button new-post-btn" type="submit">+ NEW POST</button>
+          </form>
+        </div>
+        <div class="row m-3">
+          <form id="allPostForm" action="/blog/home" method="GET" >
+            <button class="pill-button all-post-btn" type="submit"><i class="bi-file-earmark-text"></i> POSTS</button>
+          </form>
+        </div>
+        <div class="row m-3">
+          <form id="blogForm" action="/blog/<%= username %>" method="GET" >
+            <button class="pill-button view-blog-btn" type="submit"><i class="bi-box-arrow-in-up-right"></i> VIEW BLOG</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="col-10 d-flex flex-column align-items-center">
+        <form id="categoryForm" action="/blog/home" method="POST">
+          <select class="form-select m-3" onchange="this.form.submit()" id="category" name="category" aria-label="Default select example">
+            <option selected>Category</option>
+            <option value="Food">Food</option> 
+            <option value="Travel">Travel</option>
+            <option value="Health and fitness">Health and fitness</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Fashion and beauty">Fashion and beauty</option> 
+            <option value="Photography">Photography</option> 
+            <option value="Personal">Personal</option> 
+            <option value="DIY craft">DIY craft</option> 
+            <option value="Parenting">Parenting</option> 
+            <option value="Music">Music</option> 
+            <option value="Business">Business</option> 
+            <option value="Art and design">Art and design</option> 
+            <option value="Book and writing">Book and writing</option> 
+            <option value="Personal finance">Personal finance</option> 
+            <option value="Interior design">Interior design</option> 
+            <option value="Sports">Sports</option> 
+            <option value="News">News</option> 
+            <option value="Movie">Movie</option> 
+            <option value="Religion">Religion</option>
+            <option value="Political">Political</option>
+          </select>
+      </form>
+        <% postArray.forEach((element) => { %>
+        <div class="card my-3" style="width: 80%; height: 10%">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <span class="mx-3" id="post-letter"><%= element.title[0] %></span>
+            </div>
+            <div class="col-md-4">
+              <div class="card-body">
+                <h5 class="card-title"><%= element.title %></h5>
+                <p class="card-text"><small class="text-muted">Last updated <%= element.updatedAt %></small></p>
+              </div>
+            </div>
+            <div class="col-md-4 d-flex flex-row justify-content-end align-items-center">  
+              <form action="/blog/viewpost" method="POST">
+                <input type="hidden" class="invisible" id="viewID" name="viewID" value="<%= element.id %>">
+                <button class="mx-3 button-view" id="v_<%= element.id %>" type="submit" style="border-style: none; background-color: white;"><i class="bi-eye"></i></button>
+              </form>
+              <button class="mx-3 button-delete" id="d_<%= element.id %>" style="border-style: none; background-color: white;"><i class="bi-trash-fill"></i></button>
+              <form action="/blog/editpost" method="POST">
+                <input type="hidden" class="invisible" id="editID" name="editID" value="<%= element.id %>">
+                <button class="mx-3 button-edit" id="e_<%= element.id %>" type="submit" style="border-style: none; background-color: white;"><i class="bi-pencil"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</header>
